@@ -54,6 +54,51 @@
 | **RGB-D**         |         | Middle density                                                                                        | Cheap; flexible                                                                             | Close range;  Limited accuracy                                                                                                                                                                                                                       | Indoor reconstruction;     Object tracking;     Human pose recognition    |
 | **InSAR**         |         | Sparse                                                                                                | Global data is available                                                                    | Expensive;     Ghost scatterers;     Pre-processing                                                                                                                                                                                                  | Urban monitoring;     Forest monitoring                                   |
 
+### Image-derived
+
+1. Dense matching
+2. Multi-view stereo vision (MVS)
+3. Structure from Motion (SfM)
+
+### LiDAR
+
+In lidar scanning, since the system always moves with the platform, the position of the point cloud needs to be combined with the global navigation satellite system (GNSS) and inertial measurement unit (IMU) data to ensure high-quality point cloud matching.
+
+#### ALS - Airborne lidar scanning
+
+ALS point cloud is more expensive to obtain and usually does not contain spectral information.
+
+Multispectral airborne lidar is a special form of ALS system, which uses different wavelengths to acquire data. Multispectral lidar performs well in extracting water, vegetation, and shadows, but the data is hard to obtain.
+
+#### MLS - Moving lidar scanning
+
+Running on a moving vehicle on the ground, the most common platform is a car.
+
+#### TLS
+
+Static lidar scanning using a fixed sensor mounted on a tripod for scanning. Because it is used in medium and short distance environments, the point cloud density is very high. It can provide real, high-quality 3D models
+
+#### ULS
+
+Usually deployed on drones or other unmanned aerial vehicles. Relatively cheap and very flexible.
+
+### RGB-D
+
+An RGB-D camera is a sensor that can simultaneously acquire RGB and depth information.
+
+1. Stereo triangulation
+2. Sheet of light triangulation
+3. Structured light
+4. Time-of-flight
+5. Interferometry
+6. Coded aperture
+
+In RGB-D cameras, the relative orientation elements between different sensors or between sensors are calibrated and known, so it is easy to obtain co-registered synchronized RGB images and depth maps.
+
+### InSAR
+
+Interferometric Synthetic Aperture Radar
+
 ## Processing
 
 ![pclstructure](PointCloud.assets/pclstructure.png)
@@ -93,6 +138,8 @@ Read [Point Cloud Library][1].
 7. Spin Image
 
 #### Point cloud segmentation
+
+[Point Cloud Segmentation](PointCloudSegmentation.md)
 
 1. Regional growth
 2. Ransac
