@@ -79,6 +79,18 @@ Fusion at the decision-making level is relatively simple, and there is no need t
 
 ![img](https://mmbiz.qpic.cn/mmbiz_png/Q0FNTB1XHicwqELw6VDMia2o6bZepuu23AULibuJ43RaD8vWkTmzvqnCNeXqw17ORG6exib5ZqQBq9ep2FKsSTibe6Q/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1)
 
+## Traditional + deep learning
+
+[1] Iskakov, K., Burkov, E., Lempitsky, V., & Malkov, Y. (2019). Learnable triangulation of human pose. CVPR 2019.
+
+[2] Tu, H., Wang, C., & Zeng, W. (2020). Voxelpose: Towards multi-camera 3d human pose estimation in wild environment. ECCV 2020.
+
+[3] He, Y., Yan, R., Fragkiadaki, K., & Yu, S. I. (2020). Epipolar Transformers. CVPR 2020.
+
+[4] Hou, Y., Zheng, L., & Gould, S. (2020). Multiview detection with feature perspective transformation. ECCV 2020
+
+[5] Roddick, T., & Cipolla, R. (2020). Predicting Semantic Map Representations from Images using Pyramid Occupancy Networks. CVPR 2020
+
 ## Resources
 
 https://github.com/tyjiang1997/awesome-Automanous-3D-detection-methods
