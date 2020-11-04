@@ -91,19 +91,23 @@ Fusion at the decision-making level is relatively simple, and there is no need t
 
 ![img](https://mmbiz.qpic.cn/mmbiz_png/Q0FNTB1XHicwqELw6VDMia2o6bZepuu23AULibuJ43RaD8vWkTmzvqnCNeXqw17ORG6exib5ZqQBq9ep2FKsSTibe6Q/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1)
 
-## Traditional + deep learning
+## From multi-view multi-camera: Traditional + deep learning
 
+[Multiview detection with feature perspective transformation, ECCV 2020](https://hou-yz.github.io/publication/2020-eccv2020-mvdet)
 
+There is a clear ground plane for outdoor scenes. In such a scene, most of the objects we are interested in are on the ground, so we can use this assumption to restore the monocular information back to 3D space. In this way, the multi-view data can be integrated in a unified 3D space. One application is multi-view pedestrian detection.
 
-[1] Iskakov, K., Burkov, E., Lempitsky, V., & Malkov, Y. (2019). Learnable triangulation of human pose. CVPR 2019.
+The input in this task is images of the same scene in different cameras, hoping to eventually output a pedestrian occupancy grid under BEV. First of all, when the parameters of each camera are known and each point is assumed to be on the ground plane, we can transform each image into a trapezoidal area projected under BEV through perspective transformation, as shown in the following figure. We can project the multi-view data into the same BEV space to solve hard cases such as occlusion and small objects in the distance.
 
-[2] Tu, H., Wang, C., & Zeng, W. (2020). Voxelpose: Towards multi-camera 3d human pose estimation in wild environment. ECCV 2020.
+![alt text](https://hou-yz.github.io/images/eccv2020_mvdet_architecture.png)
 
-[3] He, Y., Yan, R., Fragkiadaki, K., & Yu, S. I. (2020). Epipolar Transformers. CVPR 2020.
+[Predicting Semantic Map Representations from Images using Pyramid Occupancy Networks. CVPR 2020](https://arxiv.org/abs/2003.13402)
 
-[4] Hou, Y., Zheng, L., & Gould, S. (2020). Multiview detection with feature perspective transformation. ECCV 2020
+This paper uses a car camera to do BEV semantic segmentation (semantic occupancy grid). Unlike the above work that directly changes a single feature map, this work makes full use of the multi-scale information of the results like FPN, so that feature maps of different scales correspond to features at different distances: intuitively, higher resolution The feature map should be responsible for generating the BEV feature in the distance, while the nearby BEV feature should be generated from the low-resolution feature map. Here, the author makes a hard division based on distance. As shown in the following flowchart:
 
-[5] Roddick, T., & Cipolla, R. (2020). Predicting Semantic Map Representations from Images using Pyramid Occupancy Networks. CVPR 2020
+![Architecture diagram showing an overview of our approach. (1) A ResNet-50 backbone network extracts image features at multiple resolutions. (2) A feature pyramid augments the high-resolution features with spatial context from lower pyramid layers. (3) A stack of dense transformer layers map the image-based features into the birds-eye-view. (4) The topdown network processes the birds-eyeview features and predicts the final semantic occupancy probabilities.](MultimodalFusion.assets/Architecture-diagram-showing-an-overview-of-our-approach-1-A-ResNet-50-backbone.png)
+
+Combining the principle of camera imaging with the powerful representation capabilities of CNN is a very interesting research direction. We can combine some basic 3D computer vision knowledge into the transform and aggregate of the feature map in CNN to enhance the image features under a single perspective. I believe that more applications can benefit from this idea.
 
 ## Resources
 
