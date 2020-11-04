@@ -8,7 +8,7 @@
 
 The 3D-CVF (ECCV20) research puts forward the biggest problem of fusion and fusion work, which is the problem of viewing angle, which is described as the problem shown in the figure. The information obtained by the camera is the principle of "Pinhole imaging". It is information obtained from a viewing cone, while lidar is information obtained in a real 3D world. This makes a big difference in the representation of the same object.
 
-![img](https://mmbiz.qpic.cn/mmbiz_png/Q0FNTB1XHicwqELw6VDMia2o6bZepuu23AtOxGTibTVMbmV9L9ocXPg171U4elrWn71lwpQCGTHy0XicerWC5ibYOvw/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1)
+![image-20201104145853586](MultimodalFusion.assets/image-20201104145853586.png)
 
 #### Data representation is not the same
 
@@ -30,9 +30,11 @@ However, as far as the link is concerned, since the size of the feature-map or d
 
 This fusion requires certain interactions in the feature layer. The main fusion method is to use feature extractors for both lidar and image branches, and the network of image branches and lidar branches is fused at a semantic level in the feedforward level to achieve semantic fusion of multi-scale information.
 
-![img](https://mmbiz.qpic.cn/mmbiz_png/Q0FNTB1XHicwqELw6VDMia2o6bZepuu23A2nohMraHZ5NEibKswSxAYoVRCHBnYSIbj35VOI8ybmT6od34mhwOPgQ/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1)
+![image-20201104145558123](MultimodalFusion.assets/image-20201104145558123.png)
 
 It is divided into **point-based multi-modal feature fusion** and **voxel-based multi-modal feature fusion**. The difference is whether lidar-backbone is based on voxel or point. As far as the author understands, the voxel-based method can use the powerful voxel-based backbone (in the article Part-A^2 of the article TPAMI20, the point-based method and the voxel-based method have been studied. The biggest difference is that CNN and CNN is superior to MLP in the perception of MLP). However, if the voxel-backbone method is used, it will be necessary to consider the change of the point-to-image mapping relationship, because the point-based method uses the original point cloud coordinates as the feature carrier, but the voxel-based method uses the voxel center as the CNN perception feature carrier , And the index of the voxel center and the original image is deviated from the coordinate index of the original point cloud to the image.
+
+**The point-based method has the advantage of having the index of the image and not having the spatial change, while the voxel method can more effectively use the perceptual ability of convolution**
 
 #### voxel-based
 
@@ -42,6 +44,16 @@ In the feature fusion stage, this method uses voxel-based method to extract the 
 Another problem solved in this paper is how to index the image information to the voxel center coordinates with deviation.
 
 ![img](https://mmbiz.qpic.cn/mmbiz_png/Q0FNTB1XHicwqELw6VDMia2o6bZepuu23AnzfSX3oqMIeCSbzHb9XxQAQOoZqRNDLRnlr2ibjFBycRBiaSg1lEytBg/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1)
+
+**3D-CVF feature fusion method**
+
+When 3D-CVF converts the pixel of the camera to the BEV view of the point cloud (voxel-feature-map), the converted size is twice the size of the xy of lidar-voxel-feature-map, that is to say the overall voxel The number is four times that of Lidar, which means it will contain more detailed information.
+
+**Auto-Calibrated Projection Method**
+
+1. Project to get a camera-plane, which is the expression of voxel-dense from image features to bev perspective.
+2. Project the voxel center divided by lidar onto the camera-plane (with an offset, not necessarily the center of the coordinate grid).
+3. Using nearest neighbor interpolation, interpolate the image features of the nearest 4 pixels to a lidar-voxel. 
 
 ![img](MultimodalFusion.assets/640)
 
@@ -80,6 +92,8 @@ Fusion at the decision-making level is relatively simple, and there is no need t
 ![img](https://mmbiz.qpic.cn/mmbiz_png/Q0FNTB1XHicwqELw6VDMia2o6bZepuu23AULibuJ43RaD8vWkTmzvqnCNeXqw17ORG6exib5ZqQBq9ep2FKsSTibe6Q/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1)
 
 ## Traditional + deep learning
+
+
 
 [1] Iskakov, K., Burkov, E., Lempitsky, V., & Malkov, Y. (2019). Learnable triangulation of human pose. CVPR 2019.
 
