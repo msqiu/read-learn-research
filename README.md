@@ -1,9 +1,9 @@
 # Read, learn, research
 
-## Point Cloud Analysis
+## Point Clouds Analysis
 
-1. [Point Cloud Summary](PointCloud.md)
-2. [Point Cloud Segmentation](PointCloudSegmentation.md)
+1. [Point Clouds Summary](PointCloud.md)
+2. [Point Clouds Segmentation](PointCloudSegmentation.md)
 
 ## Multimodal fusion
 
@@ -13,3 +13,6 @@
 
 1. [Object detection in RGB-D images](RGBDOD.md)
 
+## Compressive Sensing
+
+1. [Compressive Sensing](CompressiveSensing.md)
