@@ -7,5 +7,9 @@
 
 ## Multimodal fusion
 
-[Multimodal fusion](MultimodalFusion.md)
+1. [Multimodal fusion](MultimodalFusion.md)
+
+## RGB-D images
+
+1. [Object detection in RGB-D images](RGBDOD.md)
 
