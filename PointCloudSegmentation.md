@@ -74,7 +74,7 @@ The process of point cloud semantic segmentation (PCSS) is similar to cluster-ba
 
 classify each point or each point cluster only according to its individual characteristics, such as maximum likelihood classifier based on Gaussian mixture model, support vector machine SVM, AdaBoost......
 
-![img](PointCloudSegmentation.assets/640)
+![img](C:/Users/Qiu/Desktop/640.jpg)
 
 The process is divided into four stages: neighborhood selection, feature extraction, feature selection and semantic segmentation.
 
@@ -136,4 +136,28 @@ PointConv is an extension of Monte Carlo approximation of 3D continuous convolut
 ## Hybrid segmentation method
 
 Reduce the amount of data and extract local features. Super-voxel over-segmentation is a pre-segmentation algorithm in PCSS, because it is an effective method to reduce the amount of data at the cost of a slight loss of accuracy. In addition, because non-semantic PCS methods can provide a wealth of original local features, they are also used as pre-segmentation modules in some PCSS studies.
+
+## New Research
+
+| Name            | Conference | Stage     | Representation | Link                                          | Keywords                                 |
+| --------------- | ---------- | --------- | -------------- | --------------------------------------------- | ---------------------------------------- |
+| VoxelNet        | CVPR18     | one-stage | voxel          | https://arxiv.org/abs/1711.06396              | KITTILIDARRPN                            |
+| F-PointNet      | CVPR18     | two-stage | point          | https://arxiv.org/abs/1711.08488              | IndoorOutdoorRGBD                        |
+| SECOND          | sensors18  | one-stage | voxel          | https://github.com/traveller59/second.pytorch | KITTINuScenes                            |
+| PointPillars    | CVPR19     | one-stage | voxel          | https://arxiv.org/abs/1812.05784              | EncoderKITTIPointNets                    |
+| Point-RCNN      | CVPR19     | two-stage | point          | https://github.com/sshaoshuai/PointRCNN       | KITTI                                    |
+| F-ConvNet       | IROS19     | two-stage | point          | https://arxiv.org/abs/1903.01864              | FCNKITTISUN-RGBD                         |
+| Part-A^2        | PAMI20     | two-stage | voxel          | https://arxiv.org/abs/1907.03670              | KITTILIDARPart-aggregationPart-aware     |
+| STD             | ICCV19     | two-stage | voxel          | https://arxiv.org/abs/1907.10471v1            | KITTILoU                                 |
+| Fast Point RCNN | ICCV19     | two-stage | voxel          | https://arxiv.org/abs/1908.02990              | KITTI                                    |
+| Patchs          | arxiv19    | two-stage | voxel          | https://arxiv.org/abs/1910.04093              | KITTILRNLocalizedRPN                     |
+| TANet           | AAAI20     | two-stage | voxel          | https://arxiv.org/abs/1912.05163              | KITTITriple Attention                    |
+| RV-RCNN         | CVPR20     | two-stage | pointvoxel     | https://arxiv.org/abs/2009.00206              | KITTI                                    |
+| HVNet           | CVPR20     | one-stage | voxel          | https://arxiv.org/abs/2003.00186              | FPNLIDARmulti-scale                      |
+| PointGNN        | CVPR20     | one-stage | voxel          | https://arxiv.org/abs/2003.01251              | GNNKITTI                                 |
+| DOPS            | CVPR20     | one-stage | voxel          | https://arxiv.org/abs/2004.01170              | IndoorLIDAROutdoorScanNet                |
+| SA-SSD          | CVPR20     | one-stage | voxel          | https://github.com/skyhehe123/SA-SSD          | KITTIvoxel2point                         |
+| 3D-VID          | CVPR20     | one-stage | voxel          | https://arxiv.org/abs/2004.01389v1            | AST-GRULIDARNuScenesPMPNetSpatiotemporal |
+| 3D-SSD          | CVPR20     | one-stage | point          | https://arxiv.org/abs/1711.00238              | IndoorRGBDanchor free                    |
+| Voxel-FPN       | sensors20  | one-stage | voxel          | https://arxiv.org/abs/1907.05286              | LIDARmulti-scale                         |
 
