@@ -74,8 +74,6 @@ The process of point cloud semantic segmentation (PCSS) is similar to cluster-ba
 
 classify each point or each point cluster only according to its individual characteristics, such as maximum likelihood classifier based on Gaussian mixture model, support vector machine SVM, AdaBoost......
 
-![img](C:/Users/Qiu/Desktop/640.jpg)
-
 The process is divided into four stages: neighborhood selection, feature extraction, feature selection and semantic segmentation.
 
 #### Statistical models that consider context
@@ -83,8 +81,6 @@ The process is divided into four stages: neighborhood selection, feature extract
 such as associative and non-associative Markov networks, conditional random (CRF), simplified Markov random field models, multi-stage inference processes focusing on point cloud statistical data and relational information at different scales, And the spatial reasoning engine that models the inherent medium and long-term dependence of the data.
 
 Since the individual PCSS does not consider the context (and neighboring points) characteristics of the point, although the individual point cloud classifier can also work effectively, it will inevitably produce noise, which will lead to unsmooth PCSS results. The statistical context model can alleviate this problem. Conditional Random Field (CRF) is the most widely used context model in PCSS.
-
-![img](https://mmbiz.qpic.cn/mmbiz_png/9qdbew8iaZLiadAiaISJUKib0JG0UXOMwhpfNUFWuyQYTbwVBayv8WXHEmssKxkj1E7h3ZvWExuriaxLbaAdKKSzMkw/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1)
 
 ## Deep learning
 
@@ -104,8 +100,6 @@ The most famous voxel-based 3D-CNN is [VoxNet](http://dimatura.net/research/voxn
 
 [SegCloud](https://arxiv.org/abs/1710.07563) is an end-to-end PCSS framework that combines 3D-FCNN, trilinear interpolation (TI) and fully connected conditional random fields (FC-CRF) to complete the PCSS task. SegCloud also once became the most advanced method on the S3DIS and Semantic3D.net datasets, but it did not take any steps to optimize the high computational load and memory problems of fixed-size voxels.
 
-![img](PointCloudSegmentation.assets/640)
-
 In order to reduce unnecessary calculation and memory consumption, a flexible octree structure can effectively replace the fixed-size voxels in 3D CNNs. OctNet and O-CNN are two representative methods. Recently, VV-NET expanded the use of voxels. VV-Net utilizes a variational autoencoder (VAE) network based on radial basis functions. Compared with fixed-size voxels, this network provides a richer information representation for point clouds.
 
 ### Point-based
@@ -118,8 +112,6 @@ g: \underbrace{\mathbb{R}^{K} \times \ldots \times \mathbb{R}^{K}}_{n} \rightarr
 f\left(\left\{x_{1}, \ldots, x_{n}\right\}\right) \approx g\left(h\left(x_{1}\right), \ldots, h\left(x_{n}\right)\right)
 \end{array}
 $$
-
-![img](https://mmbiz.qpic.cn/mmbiz_png/9qdbew8iaZLiadAiaISJUKib0JG0UXOMwhpfos39TugOBnicdGazpiam8WNdkXcHP9KcbWl59TskC3uibhlianyQjOkgwQ/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1)
 
 #### [R-PointNet](https://arxiv.org/pdf/1812.03320.pdf)
 
@@ -137,7 +129,7 @@ PointConv is an extension of Monte Carlo approximation of 3D continuous convolut
 
 Reduce the amount of data and extract local features. Super-voxel over-segmentation is a pre-segmentation algorithm in PCSS, because it is an effective method to reduce the amount of data at the cost of a slight loss of accuracy. In addition, because non-semantic PCS methods can provide a wealth of original local features, they are also used as pre-segmentation modules in some PCSS studies.
 
-## New Research
+## New Research till 10.2020
 
 | Name            | Conference | Stage     | Representation | Link                                          | Keywords                                         |
 | --------------- | ---------- | --------- | -------------- | --------------------------------------------- | ------------------------------------------------ |
