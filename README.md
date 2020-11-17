@@ -5,9 +5,9 @@
 1. [Point Clouds Summary](PointCloud.md)
 2. [Point Clouds Segmentation](PointCloudSegmentation.md)
 
-## Multimodal fusion
+## Multi-sensor Information fusion
 
-1. [Multimodal fusion](MultimodalFusion.md)
+1. [Multi-sensor Information fusion](Multi-sensor Information fusion.md)
 
 ## RGB-D images
 
