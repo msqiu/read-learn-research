@@ -8,6 +8,7 @@
 ## Multi-sensor Information fusion
 
 1. [Multi-sensor Information fusion](Multi-sensor%20Information%20fusion.md)
+2. [Multi-sensor Calibration](Multi-sensor%20Calibration.md)
 
 ## RGB-D images
 
