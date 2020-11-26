@@ -10,7 +10,7 @@ Information fusion techniques can integrate a large amount of data and knowledge
 
     The 3D-CVF (ECCV20) research puts forward the biggest problem of fusion and fusion work, which is the problem of viewing angle, which is described as the problem shown in the figure. The information obtained by the camera is the principle of “Pinhole imaging”. It is information obtained from a viewing cone, while lidar is information obtained in a real 3D world. This makes a big difference in the representation of the same object.
 
-    ![Multi-sensor%20Information%20fusion.png](Multi-sensor%20Information%20fusion/Untitled.png)
+    ![Multi-sensor%20Information%20fusion.png](sva.png)
 
 2. **Data representation is not the same**
 
@@ -40,9 +40,7 @@ Data-level fusion requires multiple sensors to be **homogeneous** (the sensors a
 
 Data-level fusion does not have the problem of data loss, and the results are accurate; but the amount of calculation is large, and the requirement for system **communication** is high.
 
-![Multi-sensor%20Information%20fusion/Data-level_fusion.png](Multi-sensor%20Information%20fusion/Data-level_fusion.png)
-
-Data-level fusion
+![Multi-sensor%20Information%20fusion/Data-level_fusion.png](Data-level_fusion.png)
 
 ### Feature-level fusion (deep-level)
 
@@ -55,9 +53,7 @@ Selecting the appropriate **feature** for fusion is the important; feature infor
 
 Feature-level fusion has developed relatively well, and because a set of effective feature correlation technologies have been established in **the feature layer**, the **consistency** of the fusion information can be guaranteed; this level of fusion has relatively **low requirements for calculation and communication**, but the abandonment of part of the data reduces its **accuracy**.
 
-![Multi-sensor%20Information%20fusion/Feature-level_fusion.png](Multi-sensor%20Information%20fusion/Feature-level_fusion.png)
-
-Feature-level fusion
+![Multi-sensor%20Information%20fusion/Feature-level_fusion.png](Feature-level_fusion.png)
 
 It is divided into **point-based multi-modal feature fusion** and **voxel-based multi-modal feature fusion**. The difference is whether lidar-backbone is based on voxel or point. As far as the author understands, the voxel-based method can use the powerful voxel-based backbone (in the article Part-A^2 of the article TPAMI20, the point-based method and the voxel-based method have been studied. The biggest difference is that CNN and CNN is superior to MLP in the perception of MLP). However, if the voxel-backbone method is used, it will be necessary to consider the change of the point-to-image mapping relationship, because the point-based method uses the original point cloud coordinates as the feature carrier, but the voxel-based method uses the voxel center as the CNN perception feature carrier , And the index of the voxel center and the original image is deviated from the coordinate index of the original point cloud to the image.
 
@@ -102,9 +98,7 @@ Decision-level fusion has high **flexibility** in information processing. The sy
 
 Due to the time-varying dynamic characteristics of the environment and goals, the difficulty of acquiring prior knowledge, the huge characteristics of the knowledge base, the object-oriented system design requirements, etc., the development of decision-level fusion theory and technology is still subject to certain restrictions.
 
-![Multi-sensor%20Information%20fusion/Decision-level_fusion.png](Multi-sensor%20Information%20fusion/Decision-level_fusion.png)
-
-Decision-level fusion
+![Multi-sensor%20Information%20fusion/Decision-level_fusion.png](Decision-level_fusion.png)
 
 ***CLOCs: Camera-LiDAR Object Candidates Fusion for 3D Object Detection***
 

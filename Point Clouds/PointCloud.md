@@ -101,7 +101,7 @@ Interferometric Synthetic Aperture Radar
 
 ## Processing
 
-![pclstructure](PointCloud.assets/pclstructure.png)
+![pclstructure](pclstructure.png)
 
 Read [Point Cloud Library][1].
 

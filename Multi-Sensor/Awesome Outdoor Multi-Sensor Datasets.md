@@ -59,7 +59,7 @@
 
 6. [ApolloScape](http://apolloscape.auto/)
 
-   ![image-20201126104329157](image-20201126104329157.png)
+   ![ApolloScapeWorkflow](ApolloScapeWorkflow.png)
 
    1. two VUX-1HA laser scanners
    2. one VMX-CS6 camera system (two front cameras are used with resolution 3384 × 2710)
